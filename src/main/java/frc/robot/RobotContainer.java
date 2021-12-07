@@ -11,6 +11,7 @@ import frc.robot.commands.ElevatorDown;
 import frc.robot.commands.ElevatorStop;
 import frc.robot.commands.ElevatorUp;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.SetPosition;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -34,8 +35,8 @@ public class RobotContainer {
   JoystickButton driverYButton = new JoystickButton(driverJoystick, Constants.Y_BUTTON);
   JoystickButton driverAButton = new JoystickButton(driverJoystick, Constants.A_BUTTON);
   JoystickButton driverRightTrigger = new JoystickButton(driverJoystick, Constants.RIGHT_TRIGGER);
-
-  /** The container for the robot. Contains subsystems, OI devices, and commands. */
+  JoystickButton driverBButton= new JoystickButton(driverJoystick, Constants.B_BUTTON);
+  JoystickButton driverXButton = new JoystickButton(driverJoystick,Constants.X_BUTTON);
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
@@ -52,6 +53,8 @@ public class RobotContainer {
     driverRightTrigger.whileActiveOnce(new ElevatorStop(m_Elevator));
     driverYButton.whileActiveOnce(new ElevatorUp(m_Elevator));
     driverAButton.whileActiveOnce(new ElevatorDown(m_Elevator));
+    driverBButton.whileActiveOnce(new SetPosition(m_Elevator,2));
+    driverXButton.whileActiveOnce(new SetPosition(m_Elevator,-2));
   }
 
   /**

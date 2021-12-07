@@ -12,11 +12,13 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class Drivetrain extends SubsystemBase {
   /** Creates a new Drivetrain. */
 
-    CANSparkMax FrontrightdriveMotor =new CANSparkMax(12, MotorType.kBrushless);
-    CANSparkMax BackrightdriveMotor =new CANSparkMax(10, MotorType.kBrushless);
-    CANSparkMax FrontleftdriveMotor =new CANSparkMax(13, MotorType.kBrushless);
-    CANSparkMax BackleftdriveMotor =new CANSparkMax(18, MotorType.kBrushless);
-  public Drivetrain() {}
+  CANSparkMax FrontrightdriveMotor = new CANSparkMax(12, MotorType.kBrushless);
+  CANSparkMax BackrightdriveMotor = new CANSparkMax(10, MotorType.kBrushless);
+  CANSparkMax FrontleftdriveMotor = new CANSparkMax(13, MotorType.kBrushless);
+  CANSparkMax BackleftdriveMotor = new CANSparkMax(18, MotorType.kBrushless);
+
+  public Drivetrain() {
+  }
 
   @Override
   public void periodic() {
